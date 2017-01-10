@@ -1,0 +1,112 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Hugo’s House of Horrors</title>
+    <style>
+      @import url('https://fonts.googleapis.com/css?family=VT323');
+
+      body {
+        background: black url(hhh-0.png) no-repeat center / contain;
+        height: 100vh;
+        margin: 0;
+      }
+
+      div {
+        background: none no-repeat center / contain;
+        height: 100vh;
+      }
+
+      input {
+        background: none;
+        border: 0;
+        bottom: 0;
+        box-sizing: border-box;
+        color: #ff5;
+        font: bold 30pt 'VT323', monospace;
+        left: 0;
+        padding: .2em 0 .2em 50px;
+        position: absolute;
+        width: 100vw;
+      }
+      input:focus { outline: none; }
+
+      span {
+        background: url(hhh-cursor.png) no-repeat center / cover;
+        bottom: 2px;
+        height: 46px;
+        left: 2px;
+        position: absolute;
+        width: 46px;
+      }
+
+      iframe {
+        position: absolute;
+        right: 0;
+        top: 0;
+        visibility: hidden;
+      }
+    </style>
+  </head>
+  <body oncontextmenu="return false">
+    <div></div>
+    <form>
+      <input>
+    </form>
+    <span></span>
+    <iframe src="https://www.youtube.com/embed/A7CYcHRS_48?autoplay=1&loop=1&start=5"></iframe>
+    <script>
+      let p = false;
+      let k = false;
+      document.querySelector('div').style.backgroundImage = 'url(hhh-1.png)';
+
+      function focusInput () {
+        document.querySelector('input').focus();
+      }
+
+      document.addEventListener('DOMContentLoaded', focusInput);
+      document.addEventListener('click', focusInput);
+
+      document.querySelector('form').onsubmit = function (e) {
+        const val = document.querySelector('input').value.trim();
+        const div = document.querySelector('div');
+        e.preventDefault();
+        if (!val) {
+          div.style.backgroundImage = '';
+        } else if (val.match(/look/g)) {
+          div.style.backgroundImage = 'url(hhh-1.png)';
+        } else if (val.match(/pumpkin/g) && !p) {
+          p = true;
+          div.style.backgroundImage = 'url(hhh-4.png)';
+          document.body.style.backgroundImage = 'url(hhh-5.png)';
+        } else if (val.match(/key/g) && p) {
+          k = true;
+          div.style.backgroundImage = 'url(hhh-3.png)';
+          document.body.style.backgroundImage = 'url(hhh-6.png)';
+        } else if (val.match(/door/g) && k) {
+          k = true;
+          window.open('/gate1', '_self');
+        } else {
+          div.style.backgroundImage = 'url(hhh-2.png)';
+        }
+        document.querySelector('input').value = '';
+      };
+
+      document.addEventListener('keydown', function (e) {
+        if (e.which === 112) {
+          window.open('http://playdosgamesonline.com/hugos-house-horrors.html');
+        }
+      });
+
+      const preload2 = new Image();
+      preload2.src = 'hhh-2.png';
+      const preload3 = new Image();
+      preload3.src = 'hhh-3.png';
+      const preload4 = new Image();
+      preload4.src = 'hhh-4.png';
+      const preload5 = new Image();
+      preload5.src = 'hhh-5.png';
+      const preload6 = new Image();
+      preload6.src = 'hhh-6.png';
+    </script>
+  </body>
+</html>

@@ -1,0 +1,92 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Key 2</title>
+    <style>
+      body {
+        background: black;
+        color: white;
+        font-size: 24pt;
+        margin: 0;
+        text-align: center;
+      }
+      iframe {
+        position: absolute;
+        right: 0;
+        top: 0;
+        visibility: hidden;
+      }
+      p { display: none; }
+      .solved { margin: 10%; }
+      .solved img { display: none; }
+      .solved p { display: block; }
+    </style>
+  </head>
+  <body oncontextmenu="return false">
+    <img src="f2-worldmap.png" usemap="worldmap">
+    <map name="worldmap">
+      <area href="#" shape="rect" coords="167,129,217,179">
+      <area href="#" shape="rect" coords="292,102,375,136">
+      <area href="#" shape="rect" coords="369,121,422,185">
+      <area href="#" shape="rect" coords="309,199,385,227">
+      <area href="#" shape="rect" coords="470,271,521,335">
+      <area href="#" shape="rect" coords="533,297,630,320">
+      <area href="#" shape="rect" coords="198,399,284,429">
+      <area href="#" shape="rect" coords="49,530,132,570">
+      <area href="#" shape="rect" coords="566,700,644,727">
+      <area href="#" shape="rect" coords="669,522,723,588">
+      <area href="#" shape="rect" coords="920,272,971,336">
+      <area href="#" shape="rect" coords="954,247,1034,274">
+      <area href="#" shape="rect" coords="1210,322,1282,389">
+      <area href="#" shape="rect" coords="1214,271,1265,302">
+      <area href="#" shape="rect" coords="1269,222,1323,285">
+      <area href="#" shape="rect" coords="1321,31,1362,73">
+      <area href="#" shape="rect" coords="1155,672,1210,714">
+      <area href="#" shape="rect" coords="869,822,997,865">
+      <area href="#" shape="rect" coords="158,875,216,915">
+      <area href="#" shape="rect" coords="617,970,645,1009">
+      <area href="#" shape="rect" coords="931,881,985,910">
+      <area href="#" shape="rect" coords="1152,871,1238,936">
+      <area href="#" shape="rect" coords="913,921,977,986">
+      <area href="#" shape="rect" coords="908,992,970,1022">
+      <area href="#" shape="rect" coords="987,985,1066,1015">
+      <area href="#" shape="rect" coords="1027,1260,1123,1288">
+      <area href="#" shape="rect" coords="121,1322,289,1373">
+      <area href="#" shape="rect" coords="369,1311,478,1337">
+      <area href="#" shape="rect" coords="443,1323,545,1389">
+      <area href="#" shape="rect" coords="443,1396,565,1424">
+      <area href="#" shape="rect" coords="463,1430,585,1458">
+      <area href="#" shape="rect" coords="646,1423,740,1490">
+      <area href="#" shape="rect" coords="963,1433,1023,1475">
+      <area href="#" shape="rect" coords="1062,1422,1227,1489">
+      <area href="#" shape="rect" coords="1264,1433,1323,1475">
+    </map>
+    <p>You have acquired the second key</p>
+    <p>Another riddle to move past step three</p>
+    <p>I get reported for rage all the time</p>
+    <p>But try as you might, I’ll never die</p>
+    <p>With a classic name all rioters know</p>
+    <p>I’m head of the league and I live in the snow</p>
+    <iframe src="https://www.youtube.com/embed/W-OkJselqL0?autoplay=1&loop=1"></iframe>
+    <script>
+      const areas = document.querySelectorAll('area');
+      areas.forEach(function (area, i) {
+        area.addEventListener('click', function () {
+          if (i === 0) {
+            document.body.classList = 'solved';
+            document.querySelector('iframe').src = 'https://www.youtube.com/embed/PSNue3tZZac?autoplay=1&loop=1';
+          } else {
+            alert('Nope.');
+          }
+        });
+      });
+      history.scrollRestoration = 'manual';
+      setTimeout(function () {
+        window.scrollTo(
+          (document.body.scrollWidth - document.body.offsetWidth) / 2,
+          (document.body.scrollHeight - document.documentElement.clientHeight) / 2
+        );
+      }, 50);
+    </script>
+  </body>
+</html>
